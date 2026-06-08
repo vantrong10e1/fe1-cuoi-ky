@@ -253,7 +253,7 @@
 /* BUTTON */
 .card-btn {
     position: absolute;
-    top: 385px; /* Adjust based on image height 430px */
+    top: 350px; /* Pushed higher up inside the image */
     left: 50%;
     transform: translateX(-50%);
     display: inline-block;
@@ -1718,7 +1718,7 @@
 @media(max-width: 768px) {
     .fashion-card .card-btn {
         bottom: auto !important;
-        top: 365px !important; /* Fixed relative to the top of the card so it stays on the image! */
+        top: 330px !important; /* Fixed relative to the top of the card so it stays on the image! */
     }
 }
 
