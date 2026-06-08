@@ -55,7 +55,7 @@
     <!-- NAVBAR TRẮNG -->
     <nav class="main-navbar navbar navbar-expand-lg">
 
-        <div class="container-fluid px-5">
+        <div class="container-fluid px-5 d-flex justify-content-between align-items-center" style="position: relative;">
 
             <!-- LEFT MENU -->
             <ul class="navbar-nav d-flex flex-row gap-5">
@@ -84,25 +84,36 @@
 
             <!-- LOGO -->
             <a class="navbar-brand logo" href="#">
-                Salehub
+                <img src="public/images/logo_350x.png" alt="SaleHub" class="img-fluid">
             </a>
+
+            <!-- MOBILE SEARCH BAR (ONLY MOBILE) -->
+            <div class="mobile-search-bar d-md-none position-relative flex-grow-1 mx-3">
+                <input type="text" placeholder="Search" class="form-control rounded-pill border-0" style="background-color: #f1f1f1; font-size: 14px; padding-left: 15px;">
+                <i class="fa-solid fa-magnifying-glass position-absolute" style="right: 15px; top: 50%; transform: translateY(-50%); color: #000; font-size: 14px;"></i>
+            </div>
 
             <!-- RIGHT -->
             <div class="right-menu d-flex align-items-center gap-4">
 
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-magnifying-glass fs-5 d-none d-md-block"></i>
 
-                <span>SEARCH</span>
+                <span class="d-none d-md-block">SEARCH</span>
 
-                <span>|</span>
+                <span class="d-none d-md-block">|</span>
 
-                <span>ACCOUNT</span>
+                <span class="d-none d-md-block">ACCOUNT</span>
 
-                <span>|</span>
+                <span class="d-none d-md-block">|</span>
 
-                <i class="fa-solid fa-bag-shopping"></i>
+                <div class="cart-wrapper d-none d-md-flex align-items-center gap-2">
+                    <i class="fa-solid fa-bag-shopping fs-5"></i>
+                    <span>MY CART</span>
+                    <span class="cart-badge">0</span>
+                </div>
 
-                <span>MY CART</span>
+                <!-- HAMBURGER MENU (MOBILE ONLY) -->
+                <i class="fa-solid fa-bars d-md-none fs-3 ms-2"></i>
 
             </div>
 
@@ -118,7 +129,7 @@
             <!-- ITEM 1 -->
             <div class="carousel-item active">
 
-                <img src="public/images/slideshow-1_8dc22c1c-a34d-4050-a70c-24d6be5b3ea7_540x.jpg"
+                <img src="public/images/general_images/slideshow-1_f9506a0f-cd22-46e1-89e6-dfb216eda48b_1920x950.jpg"
                     class="d-block w-100 banner-img">
 
                 <!-- CONTENT ĐÈ LÊN ẢNH -->
@@ -142,25 +153,36 @@
 
             <!-- ITEM 2 -->
             <div class="carousel-item">
-
-                <img src="public/images/slideshow-1_10f93c77-966b-42f0-86aa-4d863fbe8090_2048x.jpg"
+                <img src="public/images/general_images/slideshow-1_10f93c77-966b-42f0-86aa-4d863fbe8090_2048x.jpg"
                     class="d-block w-100 banner-img">
-
                 <div class="carousel-caption custom-caption">
-
-                    <p class="small-text">
-                        NEW COLLECTION
-                    </p>
-
-                    <h1>
-                        FASHION STYLE
-                    </h1>
-
-                    <button class="shop-btn">
-                        SHOP NOW
-                    </button>
-
+                    <p class="small-text"> NEW COLLECTION </p>
+                    <h1> FASHION STYLE </h1>
+                    <button class="shop-btn"> SHOP THE COLLECTION → </button>
                 </div>
+            </div>
+
+            <!-- ITEM 3 -->
+            <div class="carousel-item">
+                <img src="public/images/general_images/slideshow-2_c3ff6660-2d9f-4b8c-80af-87508761c9a6_2048x.jpg"
+                    class="d-block w-100 banner-img">
+                <div class="carousel-caption custom-caption">
+                    <p class="small-text"> WINTER COATS </p>
+                    <h1> WINTER<br>COLLECTION </h1>
+                    <button class="shop-btn"> SHOP THE COLLECTION → </button>
+                </div>
+            </div>
+
+            <!-- ITEM 4 -->
+            <div class="carousel-item">
+                <img src="public/images/general_images/slideshow-2_2fab53c9-6055-4722-bdcd-726f1eedc34d_1512x.webp"
+                    class="d-block w-100 banner-img">
+                <div class="carousel-caption custom-caption">
+                    <p class="small-text"> DENIM JACKETS </p>
+                    <h1> SPRING<br>COLLECTION </h1>
+                    <button class="shop-btn"> SHOP THE COLLECTION → </button>
+                </div>
+            </div>
 
             </div>
 
@@ -187,52 +209,58 @@
 
         <div class="fashion-card">
 
-            <img src="public/images/1_35559729-bb4f-477a-afbb-d695451b9719_540x.jpg" alt="">
+            <img src="public/images/img-12-1_1920x1920.jpg" alt="">
 
-            <button class="card-btn">
-                SHOP THE COLLECTION →
-            </button>
+            <div class="card-content">
+                <button class="card-btn">
+                    SHOP THE COLLECTION →
+                </button>
 
-            <h3>DENIM JACKET OUTFITS</h3>
-
-            <p>
-                See our top-picks for jean jackets that are oversized,
-                distressed, and downright cool.
-            </p>
-
-        </div>
-
-        <div class="fashion-card">
-
-            <img src="public/images/1_423afc51-89a7-412d-b94e-1905f35af736_540x.jpg" alt="">
-
-            <button class="card-btn">
-                SHOP THE COLLECTION →
-            </button>
-
-            <h3>WOMEN'S COATS & JACKETS</h3>
-
-            <p>
-                Shop the latest in women's Coats & Jackets from
-                SaleHub. Discover new trends, explore new arrivals.
-            </p>
+                <h3>DENIM JACKET OUTFITS</h3>
+    
+                <p>
+                    See our top-picks for jean jackets that are oversized,
+                    distressed, and downright cool.
+                </p>
+            </div>
 
         </div>
 
         <div class="fashion-card">
 
-            <img src="public/images/1_4b6df0cc-511d-4f31-8475-08b1346b1921_540x.jpg" alt="">
+            <img src="public/images/img-12-2_1920x1920.jpg" alt="">
 
-            <button class="card-btn">
-                SHOP THE COLLECTION →
-            </button>
+            <div class="card-content">
+                <button class="card-btn">
+                    SHOP THE COLLECTION →
+                </button>
 
-            <h3>T-SHIRT</h3>
+                <h3>WOMEN'S COATS & JACKETS</h3>
+    
+                <p>
+                    Shop the latest in women's Coats & Jackets from
+                    SaleHub. Discover new trends, explore new arrivals.
+                </p>
+            </div>
 
-            <p>
-                Find affordable T-shirts for men from our selection
-                of V-neck, crew neck, striped long-sleeve.
-            </p>
+        </div>
+
+        <div class="fashion-card">
+
+            <img src="public/images/img-12-3_1920x1920.jpg" alt="">
+
+            <div class="card-content">
+                <button class="card-btn">
+                    SHOP THE COLLECTION →
+                </button>
+
+                <h3>T-SHIRT</h3>
+    
+                <p>
+                    Find affordable T-shirts for men from our selection
+                    of V-neck, crew neck, striped long-sleeve.
+                </p>
+            </div>
 
         </div>
 
@@ -244,42 +272,25 @@
     <section class="service-section">
 
         <!-- ITEM -->
+        <!-- ITEM -->
         <div class="service-box">
-
-            <i class="fa-solid fa-arrow-right-arrow-left"></i>
-
-            <h4>30 DAYS RETURN</h4>
-
-            <p>
-                Simply return it within 30 days for an exchange.
-            </p>
-
+            <i class="fa-solid fa-right-left fs-1 mb-3"></i>
+            <h4 class="fw-bold fs-6">30 DAYS RETURN</h4>
+            <p class="mb-0">Simply return it within 30 days for an exchange.</p>
         </div>
 
         <!-- ITEM -->
         <div class="service-box">
-
-            <i class="fa-solid fa-truck"></i>
-
-            <h4>FREE US DELIVERY</h4>
-
-            <p>
-                On orders over $200!
-            </p>
-
+            <i class="fa-solid fa-truck-fast fs-1 mb-3"></i>
+            <h4 class="fw-bold fs-6">FREE US DELIVERY</h4>
+            <p class="mb-0">On orders over $200!</p>
         </div>
 
         <!-- ITEM -->
         <div class="service-box">
-
-            <i class="fa-solid fa-headset"></i>
-
-            <h4>SUPPORT 24/7</h4>
-
-            <p>
-                Contact us 24 hours a day, 7 days a week
-            </p>
-
+            <i class="fa-solid fa-phone-volume fs-1 mb-3"></i>
+            <h4 class="fw-bold fs-6">SUPPORT 24/7</h4>
+            <p class="mb-0">Contact us 24 hours a day, 7 days a week</p>
         </div>
 
     </section>
@@ -294,19 +305,19 @@
                 <div class="carousel-item active">
                     <div class="products-wrapper"> <!-- CARD -->
                         <div class="product-card"> <img
-                                src="public/images/1_4b80156e-4a28-40af-a292-dc465bf35b1a_720x.jpg" alt="">
+                                src="public/images/general_images/1_4b80156e-4a28-40af-a292-dc465bf35b1a_720x.jpg" alt="">
                             <h4>Faux suede biker jacket</h4>
                             <div class="stars"> ★★★★☆ </div>
                             <p class="price">$60.00</p>
                         </div> <!-- CARD -->
                         <div class="product-card"> <img
-                                src="public/images/1_5c0c329d-da3c-4361-a786-e33ac5ea5498_540x.jpg" alt="">
+                                src="public/images/general_images/1_5c0c329d-da3c-4361-a786-e33ac5ea5498_540x.jpg" alt="">
                             <h4>Pocketed denim jacket</h4>
                             <div class="stars empty"> ☆☆☆☆☆ </div>
                             <p class="price">$56.00</p>
                         </div> <!-- CARD -->
                         <div class="product-card"> <img
-                                src="public/images/1_c02958e8-91cd-4497-83ce-e5509baad4b4_720x.jpg" alt="">
+                                src="public/images/general_images/1_c02958e8-91cd-4497-83ce-e5509baad4b4_720x.jpg" alt="">
                             <h4>Oversized jacket with denim panels</h4>
                             <div class="stars"> ★★★★★ </div>
                             <p class="price">$33.00</p>
@@ -316,22 +327,43 @@
                 <div class="carousel-item">
                     <div class="products-wrapper">
                         <div class="product-card"> <img
-                                src="public/images/1_7431498e-5c7a-4907-9713-12e276efcc2f_720x.jpg" alt="">
+                                src="public/images/general_images/1_7431498e-5c7a-4907-9713-12e276efcc2f_720x.jpg" alt="">
                             <h4>Classic denim jacket</h4>
                             <div class="stars"> ★★★★☆ </div>
                             <p class="price">$72.00</p>
                         </div>
                         <div class="product-card"> <img
-                                src="public/images/1_7bb38758-0669-4713-864a-f6723b07f307_540x.jpg" alt="">
+                                src="public/images/general_images/1_7bb38758-0669-4713-864a-f6723b07f307_540x.jpg" alt="">
                             <h4>Modern black coat</h4>
                             <div class="stars"> ★★★★★ </div>
                             <p class="price">$91.00</p>
                         </div>
                         <div class="product-card"> <img
-                                src="public/images/1_8624266d-ffc8-44db-b030-5f62c62138d5_540x.jpg" alt="">
+                                src="public/images/general_images/1_8624266d-ffc8-44db-b030-5f62c62138d5_540x.jpg" alt="">
                             <h4>Stylish winter jacket</h4>
                             <div class="stars"> ★★★★☆ </div>
                             <p class="price">$49.00</p>
+                        </div>
+                </div> <!-- SLIDE 3 -->
+                <div class="carousel-item">
+                    <div class="products-wrapper">
+                        <div class="product-card"> <img
+                                src="public/images/general_images/slideshow-3_c2da7ffe-0fee-4578-9882-d94d17f0d141_540x.jpg" alt="">
+                            <h4>Floral denim jacket</h4>
+                            <div class="stars"> ★★★★★ </div>
+                            <p class="price">$85.00</p>
+                        </div>
+                        <div class="product-card"> <img
+                                src="public/images/general_images/slideshow-4_540x.jpg" alt="">
+                            <h4>Black hoodie</h4>
+                            <div class="stars"> ★★★★☆ </div>
+                            <p class="price">$45.00</p>
+                        </div>
+                        <div class="product-card"> <img
+                                src="public/images/general_images/slideshow-5_540x.jpg" alt="">
+                            <h4>Light blue denim jacket</h4>
+                            <div class="stars"> ★★★★★ </div>
+                            <p class="price">$65.00</p>
                         </div>
                     </div>
                 </div>
@@ -344,24 +376,20 @@
     </section>
 
     <!-- MIDDLE BANNER -->
-    <section class="middle-banner"> <img src="public/images/1_8c2e787e-2a57-4eed-b20d-572e8a40bf35_720x.jpg" alt="">
+    <section class="middle-banner"> <img src="public/images/img-12-4_1920x1920.jpg" alt="">
         <!-- CONTENT -->
         <div class="middle-banner-content">
-            <h2>
-                <span class="one-content">ONE</span> <br>
-                &emsp;FINE <br>
-                &emsp;&emsp;&emsp;DAY
-            </h2> <button class="middle-banner-btn"> SHOP THE LOUNGE COLLECTION </button>
+            <button class="middle-banner-btn"> SHOP THE LOUNGE COLLECTION </button>
         </div>
     </section>
 
     <!-- FASHION SHOWCASE -->
     <section class="showcase-section">
         <div class="showcase-container"> <!-- LEFT IMAGE -->
-            <div class="showcase-left"> <img src="public/images/1_a0db46c5-9543-4f4d-a9cd-8436da10c542_900x.webp"
+            <div class="showcase-left"> <img src="public/images/img-12-5_1728x.jpg"
                     alt=""> <!-- CIRCLE --> <span class="dot dot-1"></span> <span class="dot dot-2"></span> <span
                     class="dot dot-3"></span> </div> <!-- RIGHT PRODUCT -->
-            <div class="showcase-right"> <img src="public/images/1_a5f6af0e-b13e-47bb-883f-bd586149cbad_900x.jpg"
+            <div class="showcase-right"> <img src="public/images/general_images/1_a5f6af0e-b13e-47bb-883f-bd586149cbad_900x.jpg"
                     alt="">
                 <h4> Shimmery mini skirt with ruching </h4>
                 <p class="showcase-price"> $10.00 </p> <button class="bag-btn"> ADD TO BAG </button> <!-- DOTS -->
@@ -382,29 +410,23 @@
         <!-- TITLE -->
         <h2> TRENDING BRANDS </h2> <!-- BRANDS -->
         <div class="brand-container"> <!-- ITEM -->
-            <div class="brand-box"> <i class="fa-solid fa-angle-right"></i>
-                <h4>COMPANY NAME</h4>
-                <p>YOUR SLOGAN HERE</p>
+            <div class="brand-box">
+                <img src="public/images/general_images/m-6_160x160@2x.png.webp" alt="Company Name 1" class="img-fluid" style="max-height: 80px;">
             </div> <!-- ITEM -->
-            <div class="brand-box"> <i class="fa-regular fa-envelope-open"></i>
-                <h4>COMPANY NAME</h4>
-                <p>YOUR SLOGAN HERE</p>
+            <div class="brand-box">
+                <img src="public/images/general_images/m-5_160x160@2x.png.webp" alt="Company Name 2" class="img-fluid" style="max-height: 80px;">
             </div> <!-- ITEM -->
-            <div class="brand-box"> <i class="fa-regular fa-gem"></i>
-                <h4>COMPANY NAME</h4>
-                <p>YOUR SLOGAN HERE</p>
+            <div class="brand-box">
+                <img src="public/images/general_images/m-2_160x160@2x.png.webp" alt="Company Name 3" class="img-fluid" style="max-height: 80px;">
             </div> <!-- ITEM -->
-            <div class="brand-box"> <i class="fa-solid fa-bolt"></i>
-                <h4>COMPANY NAME</h4>
-                <p>YOUR SLOGAN HERE</p>
+            <div class="brand-box">
+                <img src="public/images/general_images/m-1_160x160@2x.png.webp" alt="Company Name 4" class="img-fluid" style="max-height: 80px;">
             </div> <!-- ITEM -->
-            <div class="brand-box"> <i class="fa-solid fa-braille"></i>
-                <h4>COMPANY NAME</h4>
-                <p>YOUR SLOGAN HERE</p>
+            <div class="brand-box">
+                <img src="public/images/general_images/m-4_160x160@2x.png.webp" alt="Company Name 5" class="img-fluid" style="max-height: 80px;">
             </div> <!-- ITEM -->
-            <div class="brand-box"> <i class="fa-solid fa-link"></i>
-                <h4>COMPANY NAME</h4>
-                <p>YOUR SLOGAN HERE</p>
+            <div class="brand-box">
+                <img src="public/images/general_images/m-3_160x160@2x.png.webp" alt="Company Name 6" class="img-fluid" style="max-height: 80px;">
             </div>
         </div>
     </section>
@@ -435,32 +457,32 @@
 
             <!-- BIG IMAGE -->
             <div class="grid-item big-item">
-                <img src="public/images/1_afb70b63-ea30-4380-b7d3-8e5e765569aa_540x.jpg" alt="">
+                <img src="public/images/img-12-6_1920x.jpg" alt="">
             </div>
 
-            <!-- SMALL -->
+            <!-- 6 SMALL IMAGES -->
             <div class="grid-item">
-                <img src="public/images/1_b27601e3-4ba8-4cfa-95ea-ded4e0241681_380x481_crop_center.webp" alt="">
-            </div>
-
-            <div class="grid-item">
-                <img src="public/images/1_b5ddc236-576a-4f61-9439-8ccc8f44d2c4_720x.jpg" alt="">
+                <img src="public/images/img-12-7_720x.jpg" alt="">
             </div>
 
             <div class="grid-item">
-                <img src="public/images/1_bc70b428-ba01-434a-87f7-7fc276929722_540x.jpg" alt="">
+                <img src="public/images/img-12-8_720x.jpg" alt="">
             </div>
 
             <div class="grid-item">
-                <img src="public/images/1_c02958e8-91cd-4497-83ce-e5509baad4b4_720x.jpg" alt="">
+                <img src="public/images/img-12-9_720x.jpg" alt="">
             </div>
 
             <div class="grid-item">
-                <img src="public/images/1_c02958e8-91cd-4497-83ce-e5509baad4b4_720x.jpg" alt="">
+                <img src="public/images/img-12-10_720x.jpg" alt="">
             </div>
 
             <div class="grid-item">
-                <img src="public/images/1_d8a840f3-d40e-4d28-8191-715f1a7874e4_720x.jpg" alt="">
+                <img src="public/images/img-12-11_720x.jpg" alt="">
+            </div>
+
+            <div class="grid-item">
+                <img src="public/images/img-12-12_720x.jpg" alt="">
             </div>
 
         </div>
@@ -474,41 +496,26 @@
 
         <!-- LEFT -->
         <div class="footer-left">
-
-            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968267.png" alt="">
-
-            <img src="https://cdn-icons-png.flaticon.com/512/825/825454.png" alt="">
-
+            <img src="public/images/TRUSTe.jpg" alt="TRUSTe" class="truste-logo">
+            <img src="public/images/norton.png" alt="Norton Secured" class="norton-logo">
         </div>
 
         <!-- CENTER -->
         <div class="footer-social">
-
             <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-
             <a href="#"><i class="fa-brands fa-twitter"></i></a>
-
             <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
-
             <a href="#"><i class="fa-brands fa-vimeo-v"></i></a>
-
             <a href="#"><i class="fa-brands fa-instagram"></i></a>
-
         </div>
 
         <!-- RIGHT -->
         <div class="footer-payment">
-
-            <img src="https://cdn-icons-png.flaticon.com/512/349/349228.png" alt="">
-
-            <img src="https://cdn-icons-png.flaticon.com/512/196/196578.png" alt="">
-
-            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968299.png" alt="">
-
-            <img src="https://cdn-icons-png.flaticon.com/512/174/174861.png" alt="">
-
-            <img src="https://cdn-icons-png.flaticon.com/512/825/825464.png" alt="">
-
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/American_Express_logo.svg/120px-American_Express_logo.svg.png" alt="Amex">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/120px-MasterCard_Logo.svg.png" alt="Mastercard">
+            <img src="public/images/visa.png" alt="Visa">
+            <img src="public/images/paypal.jpg" alt="PayPal">
+            <img src="public/images/dbs.jpg" alt="DBS">
         </div>
 
     </footer>
@@ -576,7 +583,7 @@
 
                     <input type="email" placeholder="Email address">
 
-                    <button>Join →</button>
+                    <button>Join &rarr;</button>
 
                 </div>
 
@@ -599,6 +606,26 @@
         </div>
 
     </footer>
+
+    <!-- MOBILE BOTTOM NAV -->
+    <div class="mobile-bottom-nav d-md-none d-flex justify-content-around align-items-center">
+        <a href="#" class="nav-item active">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home">
+            <span>Home</span>
+        </a>
+        <a href="#" class="nav-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="Shop">
+            <span>Shop</span>
+        </a>
+        <a href="#" class="nav-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/118/118089.png" alt="Cart">
+            <span>Cart</span>
+        </a>
+        <a href="#" class="nav-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Profile">
+            <span>Profile</span>
+        </a>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 </body>

@@ -167,7 +167,7 @@
     width: 100%;
     height: 110px;
 
-    background: rgba(255, 255, 255, 0.95);
+    background: transparent;
 
     z-index: 1000;
 }
@@ -181,6 +181,9 @@
 
 /* LOGO */
 .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 70px;
     font-weight: 900;
     color: black;
@@ -192,25 +195,44 @@
     font-size: 18px;
 }
 
+.cart-wrapper {
+    cursor: pointer;
+}
+
+.cart-badge {
+    background-color: black;
+    color: white;
+    font-size: 14px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2px;
+}
+
 /* SECTION */
 .fashion-section {
     background: black;
 
-    padding: 70px 40px;
+    padding: 150px 40px;
 
     display: flex;
     justify-content: center;
     gap: 30px;
 
     flex-wrap: wrap;
+    position: relative;
+    z-index: 10;
 }
 
 /* CARD */
 .fashion-card {
     width: 31%;
     text-align: center;
-
     position: relative;
+    margin-top: -300px;
 }
 
 /* IMAGE */
@@ -222,43 +244,49 @@
     display: block;
 }
 
+/* NEW CONTENT DIV */
+.card-content {
+    background: white;
+    padding: 30px 20px 40px;
+}
+
 /* BUTTON */
 .card-btn {
-    position: absolute;
-
-    left: 50%;
-    top: 60%;
-
-    transform: translateX(-50%);
-
-    padding: 18px 40px;
-
+    display: inline-block;
+    padding: 0;
     border: none;
-    background: white;
+    background: transparent;
+    color: #333;
 
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 1px;
 
     transition: 0.3s;
+    margin-top: 15px;
+}
+.card-btn:hover {
+    background: transparent;
+    color: black;
+    text-decoration: underline;
 }
 
 /* TITLE */
 .fashion-card h3 {
-    color: white;
+    color: black;
 
-    margin-top: 28px;
+    margin-top: 0;
     margin-bottom: 15px;
 
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 900;
 }
 
 /* TEXT */
 .fashion-card p {
-    color: #ddd;
+    color: #555;
 
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.7;
 
     width: 90%;
@@ -328,8 +356,9 @@
 /* TITLE */
 .section-title {
     text-align: center;
-    font-size: 52px;
-    font-weight: 900;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
     margin-bottom: 40px;
 }
 
@@ -337,21 +366,31 @@
 .product-tabs {
     display: flex;
     justify-content: center;
-    gap: 70px;
-    margin-bottom: 70px;
+    gap: 0;
+    margin: 0 auto 70px;
+    width: max-content;
+    border-bottom: 1px solid #ccc;
+    padding: 0;
 }
 
 .product-tabs span {
+    display: inline-block;
+    width: 210px;
+    text-align: center;
     font-size: 18px;
     font-weight: 700;
     color: #999;
     cursor: pointer;
+    padding-bottom: 12px;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -1px;
+    transition: 0.3s;
 }
 
+.product-tabs span:hover,
 .active-tab {
     color: black !important;
-    border-bottom: 2px solid black;
-    padding-bottom: 12px;
+    border-bottom: 3px solid black;
 }
 
 /* PRODUCT WRAPPER */
@@ -435,38 +474,29 @@
 .middle-banner-content {
     position: absolute;
 
-    top: 58%;
-    /* đẩy xuống thấp hơn */
+    bottom: 40px;
     left: 50%;
 
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
 
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* TITLE */
-.middle-banner-content h2 {
-    color: white;
-    font-size: 95px;
-    font-weight: 700;
-    line-height: 0.9;
-    margin-bottom: 45px;
-    margin-right: 300px;
-}
 
-.one-content {
-    margin-right: 150px;
-}
 
 /* BUTTON */
 .middle-banner-btn {
     padding: 18px 42px;
     border: none;
     background: white;
+    color: black;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1px;
     transition: 0.3s;
+    margin-left: 90px;
 }
 
 /* SHOWCASE SECTION */
@@ -635,7 +665,7 @@
 
 /* BRAND SECTION */
 .brand-section {
-    background: #f3f3f3;
+    background: #fff;
     padding: 180px 40px;
     text-align: center;
 }
@@ -698,14 +728,14 @@
 /* LINE */
 .friends-line {
     border: none;
-    height: 1px;
-    background: #e5e5e5;
+    border-top: 2px solid #ccc; /* Tăng độ dày lên 2px */
+    opacity: 1; /* Hiển thị rõ nét, không bị mờ do mặc định của Bootstrap */
     margin: 0;
 }
 
 /* FRIENDS SECTION */
 .friends-section {
-    background: #f7f7f7;
+    background: #fff;
 
     padding: 140px 20px;
 
@@ -750,11 +780,11 @@
 .instagram-grid {
     display: grid;
 
-    /* tăng ảnh lớn rộng hơn chút */
     grid-template-columns: 2fr 1fr 1fr 1fr;
     grid-template-rows: 280px 280px;
 
     gap: 1px;
+    background: #000;
 }
 
 /* ITEM */
@@ -789,77 +819,70 @@
     background: #ececec;
     margin: 0;
 }
-
-/* FOOTER */
 .footer-section {
-    background: #f7f7f7;
-
+    background: #fff; /* Changed from #f7f7f7 to match image */
     height: 140px;
-
     padding: 0 22px;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-top: 1px solid #eee; /* Added subtle border */
 }
 
 /* LEFT */
 .footer-left {
     display: flex;
     align-items: center;
-    gap: 30px;
-    margin-right: 90px;
+    gap: 15px; /* Reduced gap between TrustE and Norton */
 }
 
-.footer-left img {
-    height: 42px;
+.truste-logo {
+    height: 35px;
     object-fit: contain;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 3px;
+}
+
+.norton-logo {
+    height: 55px; 
+    object-fit: contain;
+    transform: scale(1.5); /* Phóng to gấp 1.5 lần mà không đẩy lệch layout */
 }
 
 /* CENTER */
 .footer-social {
     flex: 1;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
-    gap: 50px;
+    gap: 25px; /* Slightly tighter spacing for social icons */
 }
 
-/* ICON */
 .footer-social a {
     color: #000;
-
-    font-size: 24px;
-
-    transform: scale(1.15);
-
-    transition: 0.3s;
+    font-size: 16px;
+    transition: color 0.3s;
 }
 
 .footer-social a:hover {
-    opacity: 0.6;
-    transform: scale(1.3);
+    color: #777;
 }
 
 /* RIGHT */
 .footer-payment {
     display: flex;
     align-items: center;
-    gap: 20px;
-    margin-left: -40px;
+    gap: 8px; /* Tighter spacing for payment icons */
 }
 
 .footer-payment img {
-    width: 55px;
-    height: 25px;
-
+    width: 48px;
+    height: 30px;
     background: white;
     border: 1px solid #eee;
-
-    padding: 6px;
-
+    padding: 4px;
+    border-radius: 2px;
     object-fit: contain;
 }
 
@@ -930,39 +953,44 @@
 /* INPUT */
 .newsletter-input {
     display: flex;
+    border: 1px solid #000;
+    height: 54px;
+    background: white;
+    transition: 0.3s;
+}
+
+.newsletter-input:hover,
+.newsletter-input:focus-within {
+    box-shadow: 0 0 0 1px #000;
 }
 
 .newsletter-input input {
     width: 75%;
-    height: 54px;
-
+    height: 100%;
     border: none;
     outline: none;
-
     padding: 0 18px;
-
     font-size: 14px;
+    background: transparent;
 }
 
 .newsletter-input button {
     width: 25%;
-    height: 54px;
-
+    height: 100%;
     border: none;
-
+    border-left: 1px solid #000;
     background: white;
     color: black;
-
     font-size: 14px;
     font-weight: 700;
-
     cursor: pointer;
-
     transition: 0.3s;
 }
 
 .newsletter-input button:hover {
-    background: #ddd;
+    background: #f0f0f0;
+    color: black;
+    text-decoration: none;
 }
 
 /* BOTTOM */
@@ -1070,7 +1098,10 @@
     }
 
     .logo {
+        position: static;
+        transform: none;
         font-size: 34px;
+        margin-right: auto;
     }
 
     .navbar-nav {
@@ -1140,26 +1171,45 @@
 
     .fashion-card {
         width: 100%;
+        display: flex;
+        flex-direction: column;
     }
 
     .fashion-card img {
         height: 360px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .fashion-card .card-content {
+        position: static;
+        background: #000;
+        color: #fff;
+        padding: 30px 20px;
+        text-align: center;
+        opacity: 1; /* Override desktop hover hiding */
     }
 
     .fashion-card h3 {
         font-size: 20px;
+        color: #fff;
+        margin-top: 15px;
     }
 
     .fashion-card p {
         font-size: 13px;
+        color: #fff;
+        margin-top: 10px;
     }
 
     .card-btn {
-        top: 72%;
-
+        position: static;
         padding: 12px 18px;
-
         font-size: 10px;
+        background: transparent;
+        color: #fff;
+        border: none;
+        display: inline-block;
     }
 
     /* =========================
@@ -1203,25 +1253,30 @@
     }
 
     .products-wrapper {
-        flex-direction: column;
-
-        gap: 40px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: space-between;
     }
 
     .product-card {
-        width: 100%;
+        width: calc(50% - 10px);
     }
 
     .product-card img {
-        height: 360px;
+        height: 220px;
+        width: 100%;
+        object-fit: cover;
     }
 
     .product-card h4 {
-        font-size: 14px;
+        font-size: 12px;
+        margin-top: 10px;
     }
 
     .price {
-        font-size: 18px;
+        font-size: 14px;
+        margin-top: 5px;
     }
 
     .custom-arrow span {
@@ -1330,12 +1385,12 @@
 
     .brand-container {
         justify-content: center;
-
-        gap: 40px;
+        gap: 15px;
+        flex-wrap: wrap;
     }
 
     .brand-box {
-        width: 28%;
+        width: 30%;
     }
 
     .brand-box i {
@@ -1355,25 +1410,44 @@
     ========================= */
 
     .friend-section {
-        padding: 90px 20px;
+        padding: 60px 0 0 0; /* Adjust padding to fit the full-width grid better on mobile */
     }
 
     .friend-section h2 {
         font-size: 26px;
-
-        margin-bottom: 30px;
+        margin-bottom: 20px;
+        padding: 0 15px;
     }
 
     .friend-text p {
         font-size: 13px;
+        padding: 0 15px;
     }
 
     .friend-section span {
         font-size: 11px;
-
         line-height: 1.8;
-
         display: block;
+        padding: 0 15px;
+    }
+
+    .instagram-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        margin-top: 30px;
+    }
+
+    .big-item {
+        grid-column: 1 / 4;
+        grid-row: auto;
+    }
+
+    .big-item img {
+        height: 350px;
+    }
+
+    .grid-item img {
+        height: 120px;
     }
 
     /* =========================
@@ -1382,14 +1456,80 @@
 
     .footer-container {
         flex-direction: column;
-
-        gap: 40px;
+        gap: 20px;
     }
 
     .footer-column {
         width: 100%;
+        border-bottom: 1px solid #333;
+        padding-bottom: 15px;
     }
 
+    .footer-column h4 {
+        position: relative;
+        cursor: pointer;
+        margin-bottom: 0;
+        padding: 10px 0;
+    }
+
+    .footer-column h4::after {
+        content: '+';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        font-weight: 300;
+    }
+
+    .footer-column a {
+        display: none;
+    }
+
+    /* MOBILE BOTTOM NAV */
+    .mobile-bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        height: 60px;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+        padding: 0 10px;
+    }
+
+    .mobile-bottom-nav .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #999;
+        font-size: 10px;
+        gap: 4px;
+    }
+
+    .mobile-bottom-nav .nav-item img {
+        width: 20px;
+        height: 20px;
+        filter: grayscale(100%) opacity(0.6);
+    }
+
+    .mobile-bottom-nav .nav-item.active,
+    .mobile-bottom-nav .nav-item:hover {
+        color: #000;
+    }
+
+    .mobile-bottom-nav .nav-item.active img,
+    .mobile-bottom-nav .nav-item:hover img {
+        filter: none;
+    }
+
+    /* Add padding to body to prevent overlap with fixed nav */
+    body {
+        padding-bottom: 60px;
+    }
 }
 
 /* =========================================
@@ -1397,29 +1537,189 @@
 ========================================= */
 
 .shop-btn,
-.card-btn,
 .middle-banner-btn {
     border: none;
-
     background: white;
-
-    color: #888;
-
-    font-weight: 500;
-
+    color: black;
+    font-weight: 700;
     cursor: pointer;
-
-    transition:
-        color 0.3s ease,
-        font-weight 0.3s ease,
-        background 0.3s ease;
+    transition: 0.3s;
 }
 
 /* HOVER */
 .shop-btn:hover,
-.card-btn:hover,
 .middle-banner-btn:hover {
-    color: black;
-
-    font-weight: 700;
+    background: #ddd;
 }
+@media(max-width: 768px) {
+    /* 1. Header */
+    .top-navbar {
+        display: none !important;
+    }
+    .main-navbar .container-fluid {
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+    }
+    
+    /* 2. Promo Blocks */
+    .fashion-card {
+        position: relative !important;
+    }
+    .fashion-card .card-content {
+        background: #000 !important;
+        padding: 30px 20px !important;
+    }
+    .fashion-card h3 {
+        color: #fff !important;
+    }
+    .fashion-card p {
+        color: #fff !important;
+    }
+    .fashion-card .card-btn {
+        position: absolute !important;
+        top: 320px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        background: #fff !important;
+        color: #000 !important;
+        padding: 10px 20px !important;
+        font-weight: bold !important;
+        z-index: 10 !important;
+    }
+    
+    /* 3. Features Section */
+    .service-section {
+        background: #000 !important;
+        padding: 40px 15px !important;
+    }
+    .service-box h3, .service-box h4 {
+        color: #fff !important;
+    }
+    .service-box p {
+        color: #fff !important;
+    }
+    .service-box i {
+        color: #fff !important;
+    }
+    
+    /* 6. White Footer */
+    .footer-section {
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 30px 15px !important;
+        gap: 20px !important;
+    }
+    .footer-left {
+        margin-right: 0 !important;
+        justify-content: center !important;
+    }
+    .footer-payment {
+        margin-left: 0 !important;
+        justify-content: center !important;
+    }
+
+    /* 7. Black Footer */
+    .black-footer {
+        padding: 20px 15px !important;
+    }
+    .footer-column {
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+    }
+    .footer-column h4 {
+        border-bottom: 1px solid #333 !important;
+        color: #fff !important;
+        padding: 15px 0 !important;
+    }
+}
+
+@media(max-width: 768px) {
+    /* 1. Header */
+    .top-navbar {
+        display: none !important;
+    }
+    .main-navbar .container-fluid {
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+    }
+    .navbar-brand.logo img {
+        height: 25px !important; /* adjust logo size */
+    }
+    .mobile-search-bar {
+        margin: 0 10px !important;
+    }
+    .mobile-search-bar input {
+        font-size: 12px !important;
+        padding: 8px 15px !important;
+        background-color: #f5f5f5 !important;
+    }
+    .mobile-search-bar i {
+        font-size: 12px !important;
+        color: #666 !important;
+    }
+    .fa-bars {
+        font-size: 20px !important;
+        color: #333 !important;
+        margin-left: 0 !important;
+    }
+    
+    /* 2. Promo Blocks */
+    .fashion-section {
+        padding: 0 !important;
+        gap: 0 !important;
+    }
+    .fashion-card {
+        position: relative !important;
+        margin-bottom: 0 !important;
+    }
+    .fashion-card img {
+        height: 400px !important; /* Taller image on mobile */
+        width: 100% !important;
+        object-fit: cover !important;
+    }
+    .fashion-card .card-content {
+        background: #000 !important;
+        padding: 20px 15px !important;
+        margin: 0 !important;
+    }
+    .fashion-card h3 {
+        color: #fff !important;
+        font-size: 13px !important;
+        font-weight: 900 !important;
+        margin: 0 0 10px 0 !important;
+    }
+    .fashion-card p {
+        color: #fff !important;
+        font-size: 10px !important;
+        margin: 0 !important;
+        line-height: 1.5 !important;
+    }
+    .fashion-card .card-btn {
+        position: absolute !important;
+        bottom: 120px !important; /* Bottom relative to card-content which is ~100px. So this puts it over the image. */
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        background: #fff !important;
+        color: #000 !important;
+        padding: 12px 20px !important;
+        font-size: 9px !important;
+        font-weight: 700 !important;
+        letter-spacing: 1px !important;
+        white-space: nowrap !important;
+        border: none !important;
+        z-index: 10 !important;
+    }
+}
+
+@media(max-width: 768px) {
+    .fashion-card .card-btn {
+        bottom: auto !important;
+        top: 365px !important; /* Fixed relative to the top of the card so it stays on the image! */
+    }
+}
+
+
